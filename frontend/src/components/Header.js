@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Navbar, Nav, Form, Button } from 'react-bootstrap'
 import { Search, ShoppingCart } from '@material-ui/icons';
 
@@ -6,7 +7,9 @@ const Header = () => {
     return (
         <header>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Navbar.Brand href="#home">WOYO</Navbar.Brand>
+                <Link to ='/'>
+                    <Navbar.Brand>WOYO</Navbar.Brand>
+                </Link>
                 {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" /> */}
                 
                 <Navbar.Collapse id="responsive-navbar-nav">

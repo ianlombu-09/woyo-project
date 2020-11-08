@@ -34,9 +34,23 @@
   margin-bottom: 50px;
 }
 
+main {
+  min-height: 80vh
+}
+
+.card-body a {
+  color: black;
+}
+
+.card-body a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+
 footer {
-  margin-top: 300px;
-  height: 270px;
+  margin-top: 100px;
+  height: 250px;
   background-color: #152545;
   color: white;
   padding: 20px;

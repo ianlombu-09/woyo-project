@@ -1,22 +1,20 @@
 import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Hero from './components/Hero'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen'
-import { Container } from 'react-bootstrap'
+import ProductScreen from './screens/ProductScreen'
+
 
 const App = () => {
   return (
-    <div>
+    <Router>
       <Header />
-      <Hero />
-
-      <Container>
-        <HomeScreen />
-      </Container>
-
+        <main>
+          <Route path='/' component={HomeScreen} exact />
+        </main>
       <Footer />
-    </div>
+    </Router>
   )
 }
 
