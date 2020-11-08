@@ -35,3 +35,25 @@
   margin-bottom: -150px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
+
+footer {
+  margin-top: 300px;
+  height: 270px;
+  background-color: #152545;
+  color: white;
+  padding: 20px;
+}
+
+footer h2, h5 {
+  margin-top: 30px;
+}
+
+footer li {
+  list-style: none;
+  cursor: pointer;
+  line-height: 33px;
+}
+
+footer li:hover {
+  color: white;
+}
