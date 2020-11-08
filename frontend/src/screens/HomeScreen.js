@@ -7,7 +7,7 @@ import Product from '../components/Product'
 const HomeScreen = () => {
     return (
         <>
-            <Hero />
+            {/* <Hero /> */}
             <Container>
                 <Row>
                     {productJSON.map((product) => (

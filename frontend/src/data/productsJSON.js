@@ -8,7 +8,7 @@ const productsJSON = [
         brand: 'Apple',
         category: 'Electronics',
         price: 1699,
-        countInStock: 10,
+        countInStock: 0,
         rating: 4.5,
         numReviews: 20,    
     },

@@ -17,7 +17,7 @@ const Header = () => {
                     <Form inline>
                         <input type='text' placeholder='Search...' className='header__search' />
                         <Button type="submit" className='btn btn-secondary'>
-                            <Search style={{ color: 'white' }} />
+                            <Search style={{ color: 'black' }} />
                         </Button>
                     </Form>
 

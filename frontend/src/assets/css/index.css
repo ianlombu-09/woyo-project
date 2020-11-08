@@ -35,7 +35,7 @@
 }
 
 main {
-  min-height: 80vh
+  min-height: 70vh
 }
 
 .card-body a {
@@ -47,6 +47,9 @@ main {
   color: black;
 }
 
+.product__screen {
+  margin-top: 70px;
+}
 
 footer {
   margin-top: 100px;
