@@ -45,7 +45,7 @@ const ProductScreen = ({ match }) => {
 
                 <Col md={3}>
                 <ListGroup>
-                    <ListGroup.Item>
+                    <ListGroup.Item variant='secondary'>
                         <p className='text-light' style={{ fontSize: '15px', marginBottom: '0' }}>
                             Price: 
                             <span style={{ color:'black', fontSize: '16px', marginLeft: '6px'}}>
@@ -53,7 +53,7 @@ const ProductScreen = ({ match }) => {
                             </span>
                         </p>
                     </ListGroup.Item>
-                    <ListGroup.Item>
+                    <ListGroup.Item variant='secondary'>
                         <p className='text-light' style={{ fontSize: '15px', marginBottom: '0' }}>
                             Status: 
                             <span style={{ color:'black', fontSize: '16px', marginLeft: '6px'}}>
@@ -61,16 +61,17 @@ const ProductScreen = ({ match }) => {
                             </span>
                         </p>
                     </ListGroup.Item>
-                    <ListGroup.Item>
-                        <Button 
-                            className='btn-block' 
-                            type='button'
-                            variant='primary'
-                            disabled={product.countInStock === 0}
-                        >
-                            Add to Cart
-                        </Button>
-                    </ListGroup.Item>
+                    
+                    <Button 
+                        className='btn-block' 
+                        type='button'
+                        variant='primary'
+                        disabled={product.countInStock === 0}
+                        style={{ marginTop: '20px' }}
+                    >
+                        Add to Cart
+                    </Button>
+                    
                 </ListGroup>
                 </Col>
             </Row>

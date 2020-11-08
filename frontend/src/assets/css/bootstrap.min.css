@@ -6277,8 +6277,8 @@ a.badge-dark:focus {
 }
 
 .list-group-item-secondary {
-    color: #383d41;
-    background-color: #d6d8db
+    color: #f3f3f3;
+    background-color: #f1f1f1
 }
 
 .list-group-item-secondary.list-group-item-action:focus,
