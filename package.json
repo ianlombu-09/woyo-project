@@ -1,0 +1,25 @@
+{
+  "name": "woyo-project",
+  "version": "1.0.0",
+  "description": "WOYOPROJECT-MERN",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IanCode09/woyo-project.git"
+  },
+  "author": "Ian_Lombu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IanCode09/woyo-project/issues"
+  },
+  "homepage": "https://github.com/IanCode09/woyo-project#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
