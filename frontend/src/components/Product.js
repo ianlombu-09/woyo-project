@@ -9,7 +9,7 @@ const Product = ({ product }) => {
             <Card style={{ marginBottom: '40px' }}>
                 <Card.Body>
                     <Link to={`/product/${product._id}`}>
-                        <Card.Img src={product.image} />
+                        <Card.Img src={product.image} alt={product.name} />
                     
                         <Card.Title as='div' style={{ fontSize: '15px', marginTop:'10px' }}>
                             {product.name}

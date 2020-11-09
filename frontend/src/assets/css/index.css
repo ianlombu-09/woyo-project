@@ -49,6 +49,9 @@ main {
 
 .product__screen {
   margin-top: 70px;
+  padding: 30px 0;
+  border-top: 1px solid rgb(207, 204, 204);
+  border-bottom: 1px solid rgb(207, 204, 204);
 }
 
 
