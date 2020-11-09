@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "WOYOPROJECT-MERN",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon backend/server"
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,8 @@
   },
   "homepage": "https://github.com/IanCode09/woyo-project#readme",
   "dependencies": {
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
