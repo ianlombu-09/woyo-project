@@ -1,6 +1,5 @@
 const products = [
     {
-        _id: '1',
         name: 'New Apple MacBook Pro (13-inch, 16GB RAM, 512GB)',
         image: '/images/MacBook.jpg',
         description:
@@ -13,7 +12,6 @@ const products = [
         numReviews: 20,    
     },
     {
-        _id: '2',
         name: 'Canon PowerShot SX530 Digital Camera w/ 50X Optical Zoom',
         image: '/images/canon.jpg',
         description:
@@ -26,7 +24,6 @@ const products = [
         numReviews: 30,    
     },
     {
-        _id: '3',
         name: 'Wood Acoustic Guitar Starter Kit w/Case, Strap, Digital Tuner',
         image: '/images/gitar.jpg',
         description:
@@ -39,7 +36,6 @@ const products = [
         numReviews: 15,    
     },
     {
-        _id: '4',
         name: 'Logitech M525 Wireless Mouse – Long 3 Year Battery Life',
         image: '/images/logitech.jpg',
         description:
@@ -52,7 +48,6 @@ const products = [
         numReviews: 9,    
     },
     {
-        _id: '5',
         name: 'Apple MacBook Air 13.3" Quad-Core Intel Core i5, 8GB Memory',
         image: '/images/MacBookAir.jpg',
         description:
@@ -65,7 +60,6 @@ const products = [
         numReviews: 30,    
     },
     {
-        _id: '6',
         name: 'SONY PlayStation 4 Slim 1TB Console, 1TB Hard Drive',
         image: '/images/ps.jpg',
         description:
@@ -78,7 +72,6 @@ const products = [
         numReviews: 30,    
     },
     {
-        _id: '7',
         name: 'Drone FlyCam Quadcopter UAV with 2.7K Camera 3-Axis',
         image: '/images/drone.jpg',
         description:
@@ -91,7 +84,6 @@ const products = [
         numReviews: 15,    
     },
     {
-        _id: '8',
         name: 'Olympus OM-D E-M5 Mark III Black ED 14-150mm F4.0-5.6',
         image: '/images/nikon.jpg',
         description:
