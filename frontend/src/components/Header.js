@@ -1,9 +1,21 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { Navbar, Nav, Form, Button } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
+import { Navbar, Nav, Form, Button, NavDropdown } from 'react-bootstrap'
 import { Search, ShoppingCart } from '@material-ui/icons';
+import { logout } from '../actions/userActions'
 
 const Header = () => {
+    const userLogin = useSelector((state) => state.userLogin)
+    const { userInfo } = userLogin
+
+    const dispatch = useDispatch()
+
+    const logoutHandler = () => {
+        dispatch(logout())
+    }
+
     return (
         <header>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -22,12 +34,31 @@ const Header = () => {
                     </Form>
 
                     <Nav className="ml-auto">
-                        <Nav.Link href="#features">Profile</Nav.Link>
-                        <Nav.Link href="#features">Orders</Nav.Link>
-                        <Nav.Link href="#features">
-                            <ShoppingCart /> Cart
-                        </Nav.Link>
-                        <Nav.Link href="#pricing">Sign In</Nav.Link>
+                        {userInfo ? (
+                            <NavDropdown title={ userInfo.name }>
+                                <NavDropdown.Item onClick={logoutHandler}>
+                                    Logout
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                        ) : (
+                            <LinkContainer to ='/login'>
+                                <Nav.Link>
+                                    Sign In
+                                </Nav.Link>
+                            </LinkContainer>
+                        )
+                        
+                        }
+                        
+                        <Nav.Link>Profile</Nav.Link>
+                        <Nav.Link>Orders</Nav.Link>
+                        <LinkContainer to='/cart'>
+                            <Nav.Link>
+                                <ShoppingCart /> Cart
+                            </Nav.Link>
+                        </LinkContainer>
+                        
+                        
                     </Nav>
                 </Navbar.Collapse>
             </Navbar> 
