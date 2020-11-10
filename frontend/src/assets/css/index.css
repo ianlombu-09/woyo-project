@@ -79,6 +79,25 @@ main {
   background-color:  #f1eeee;
 }
 
+.login__container {
+  margin: auto;
+  width: 400px;
+}
+
+.login__body{
+  margin-top: 50px;
+  padding: 30px;
+  background-color: #eef1ee;
+}
+
+.login__signIn {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+
+
 footer {
   margin-top: 100px;
   height: 250px;
