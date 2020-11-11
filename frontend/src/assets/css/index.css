@@ -118,6 +118,23 @@ main {
   margin-top: 10px;
 }
 
+.placeOrder__container {
+  margin-top: 70px;
+}
+
+.placeOrder__container .card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 0.4rem;
+  padding-left: 2rem;
+  padding-right: 4rem;
+}
+
+.placeOrder__container .item__name a {
+  text-decoration: none;
+  color: rgb(21, 28, 128);
+}
+
 
 footer {
   margin-top: 100px;
