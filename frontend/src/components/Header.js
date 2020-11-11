@@ -46,12 +46,20 @@ const Header = () => {
                                     Sign In
                                 </Nav.Link>
                             </LinkContainer>
-                        )
+                        )}
                         
-                        }
+                        {userInfo ? (
+                            <LinkContainer to='/account'>
+                                <Nav.Link>Profile</Nav.Link>    
+                            </LinkContainer>
+                        ) : (
+                            <LinkContainer to='/account'>
+                            <Nav.Link disabled>Profile</Nav.Link>    
+                            </LinkContainer>
+                        )}
                         
-                        <Nav.Link>Profile</Nav.Link>
                         <Nav.Link>Orders</Nav.Link>
+
                         <LinkContainer to='/cart'>
                             <Nav.Link>
                                 <ShoppingCart /> Cart

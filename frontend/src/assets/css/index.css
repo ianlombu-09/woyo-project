@@ -96,6 +96,14 @@ main {
   margin-bottom: 30px;
 }
 
+.account__container {
+  margin-top: 70px;
+}
+
+.account_items a {
+  text-decoration: none;
+}
+
 
 
 footer {
