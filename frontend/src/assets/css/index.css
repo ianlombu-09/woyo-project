@@ -104,6 +104,9 @@ main {
   text-decoration: none;
 }
 
+.shipping__container {
+  margin-top: 70px;
+}
 
 
 footer {
