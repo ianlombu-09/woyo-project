@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const { ObjectId } = mongoose.Schema.Types
 
-const orderSchema = mongoose.Schema(
+const orderSchema = new mongoose.Schema(
     {
         user: {
             type: ObjectId,
