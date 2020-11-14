@@ -11,7 +11,7 @@
   margin-left: 50px;
   margin-right: 5px;
   height: 20px;
-  width: 600px;
+  width: 520px;
   border-radius: 6px;
   border: none;
   padding: 17px;
@@ -135,7 +135,8 @@ main {
   color: rgb(21, 28, 128);
 }
 
-.myorderscreen__container {
+.myorderscreen__container, 
+.userlist__container {
   margin-top: 70px;
 }
 
