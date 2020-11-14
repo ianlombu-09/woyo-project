@@ -7,16 +7,22 @@ import Message from '../components/Message'
 import { Check, Close } from '@material-ui/icons';
 import { listUsers } from '../actions/userActions'
 
-const UserListScreen = () => {
+const UserListScreen = ({ history }) => {
     const dispatch = useDispatch()
 
     const userList = useSelector((state) => state.userList)
     const { loading, error, users} = userList 
-    console.log(users)
+
+    const userLogin = useSelector((state) => state.userLogin)
+    const { userInfo } = userLogin 
 
     useEffect(() => {
-        dispatch(listUsers())
-    }, [dispatch])
+        if(userInfo && userInfo.isAdmin) {
+            dispatch(listUsers())
+        } else {
+            history.push('/login')
+        }
+    }, [dispatch, history, userInfo])
     return (
         <div className='userlist__container'>
             <h4>User List</h4>
