@@ -5,7 +5,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { Check, Close } from '@material-ui/icons';
-import { listUsers } from '../actions/userActions'
+import { listUsers, deleteUser } from '../actions/userActions'
 
 const UserListScreen = ({ history }) => {
     const dispatch = useDispatch()
@@ -16,13 +16,23 @@ const UserListScreen = ({ history }) => {
     const userLogin = useSelector((state) => state.userLogin)
     const { userInfo } = userLogin 
 
+    const userDelete = useSelector((state) => state.userDelete)
+    const { success } = userDelete
+
     useEffect(() => {
         if(userInfo && userInfo.isAdmin) {
             dispatch(listUsers())
         } else {
             history.push('/login')
         }
-    }, [dispatch, history, userInfo])
+    }, [dispatch, history, userInfo, success])
+
+    const deleteHandler = (id) => {
+        if(window.confirm('Are You Sure ?')) {
+            dispatch(deleteUser(id))
+        }
+    }
+
     return (
         <div className='userlist__container'>
             <h4>User List</h4>
@@ -46,7 +56,9 @@ const UserListScreen = ({ history }) => {
                             <tr key={user._id}>
                                 <td>{user._id}</td>
                                 <td>{user.name}</td>
-                                <td>{user.email}</td>
+                                <td>
+                                    <a href={`mailto:${user.email}`}>{user.email}</a>
+                                </td>
                                 <td>
                                     {user.isAdmin ? (
                                         <Check style={{ color: 'green' }} />
@@ -55,7 +67,7 @@ const UserListScreen = ({ history }) => {
                                     )}
                                 </td>
                                 <td>
-                                    <LinkContainer to=''>
+                                    <LinkContainer to='' style={{ marginRight: '5px' }}>
                                         <Button
                                             variant='warning btn-sm'
                                         >
@@ -63,14 +75,12 @@ const UserListScreen = ({ history }) => {
                                         </Button>
                                     </LinkContainer>
 
-                                    <LinkContainer to='' style={{ marginLeft: '5px' }}>
-                                        <Button
-                                            
-                                            variant='danger btn-sm'
-                                        >
-                                            Delete
-                                        </Button>
-                                    </LinkContainer>
+                                    <Button
+                                        variant='danger btn-sm'
+                                        onClick={() => deleteHandler(user._id)}
+                                    >
+                                        Delete
+                                    </Button>
                                 </td>
                             </tr>
                         ))}
