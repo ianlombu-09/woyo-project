@@ -57,9 +57,17 @@ const Header = () => {
                             <Nav.Link disabled>Profile</Nav.Link>    
                             </LinkContainer>
                         )}
-                        
-                        <Nav.Link>Orders</Nav.Link>
 
+                        {userInfo ? (
+                            <LinkContainer to='/orders'>
+                                <Nav.Link>Orders</Nav.Link>    
+                            </LinkContainer>
+                        ) : (
+                            <LinkContainer to='/orders'>
+                            <Nav.Link disabled>Orders</Nav.Link>    
+                            </LinkContainer>
+                        )}
+                        
                         <LinkContainer to='/cart'>
                             <Nav.Link>
                                 <ShoppingCart /> Cart

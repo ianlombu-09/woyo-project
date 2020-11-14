@@ -135,6 +135,10 @@ main {
   color: rgb(21, 28, 128);
 }
 
+.myorderscreen__container {
+  margin-top: 70px;
+}
+
 
 footer {
   margin-top: 100px;
