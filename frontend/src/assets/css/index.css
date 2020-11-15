@@ -79,9 +79,15 @@ main {
   background-color:  #f1eeee;
 }
 
-.login__container {
+.login__container,
+.useredit__container {
   margin: auto;
   width: 400px;
+}
+
+.useredit__container {
+  margin: auto;
+  width: 600px;
 }
 
 .login__body{

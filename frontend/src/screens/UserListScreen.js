@@ -67,7 +67,7 @@ const UserListScreen = ({ history }) => {
                                     )}
                                 </td>
                                 <td>
-                                    <LinkContainer to='' style={{ marginRight: '5px' }}>
+                                    <LinkContainer to={`/admin/user/${user._id}/edit`} style={{ marginRight: '5px' }}>
                                         <Button
                                             variant='warning btn-sm'
                                         >
