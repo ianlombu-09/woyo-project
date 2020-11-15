@@ -5,7 +5,12 @@ import { LinkContainer } from 'react-router-bootstrap'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { Add } from '@material-ui/icons';
-import { listProducts, deleteProduct } from '../actions/productActions'
+import { 
+    listProducts, 
+    deleteProduct, 
+    createProduct 
+} from '../actions/productActions'
+import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
 
 const ProductListScreen = ({ history }) => {
     const dispatch = useDispatch()
@@ -20,16 +25,30 @@ const ProductListScreen = ({ history }) => {
         success: successDelete,
     } = productDelete
 
+    const productCreate = useSelector((state) => state.productCreate)
+    const {
+        loading: loadingCreate,
+        error: errorCreate,
+        success: successCreate,
+        product: createdProduct
+    } = productCreate
+
     const userLogin = useSelector((state) => state.userLogin)
     const { userInfo } = userLogin
 
     useEffect(() => {
-        if( userInfo && userInfo.isAdmin) {
-            dispatch(listProducts())
-        } else {
+        dispatch({ type: PRODUCT_CREATE_RESET })
+
+        if( !userInfo) {
             history.push('/login')
         }
-    }, [dispatch, history, userInfo, successDelete])
+
+        if(successCreate) {
+            history.push(`/admin/product/${createdProduct._id}/edit`)
+        } else {
+            dispatch(listProducts())
+        }
+    }, [dispatch, history, userInfo, successDelete, successCreate, createdProduct ])
 
     const deleteHandler = (id) => {
         if(window.confirm('Are you sure ?')) {
@@ -38,15 +57,18 @@ const ProductListScreen = ({ history }) => {
     }
 
     const createProductHandler = () => {
-
-    }
+        dispatch(createProduct())
+    }	 
 
     
 
     return (
         <div className='productlist__container'>
+
             {loadingDelete && <Loader />}
             {errorDelete && <Message variant='danger'>{errorDelete}</Message>}
+            {loadingCreate && <Loader />}
+            {errorCreate && <Message variant='danger'>{errorCreate}</Message>}
             {loading ? (
                 <Loader />
             ): error ? (
@@ -64,7 +86,7 @@ const ProductListScreen = ({ history }) => {
                             </Button>
                         </Col>
                     </Row>
-
+                    
                     <Table responsive="sm">
                         <thead>
                             <tr>
