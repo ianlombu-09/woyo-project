@@ -79,13 +79,13 @@ main {
   background-color:  #f1eeee;
 }
 
-.login__container,
-.useredit__container {
+.login__container {
   margin: auto;
   width: 400px;
 }
 
-.useredit__container {
+.useredit__container,
+.productedit__container {
   margin: auto;
   width: 600px;
 }
