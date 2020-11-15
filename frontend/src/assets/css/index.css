@@ -142,7 +142,8 @@ main {
 }
 
 .myorderscreen__container, 
-.userlist__container {
+.userlist__container,
+.productlist__container {
   margin-top: 70px;
 }
 
