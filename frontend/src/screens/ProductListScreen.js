@@ -5,13 +5,20 @@ import { LinkContainer } from 'react-router-bootstrap'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { Add } from '@material-ui/icons';
-import { listProducts } from '../actions/productActions'
+import { listProducts, deleteProduct } from '../actions/productActions'
 
 const ProductListScreen = ({ history }) => {
     const dispatch = useDispatch()
 
     const productList = useSelector((state) => state.productList)
     const { loading, error, products } = productList
+
+    const productDelete = useSelector((state) => state.productDelete)
+    const {
+        loading: loadingDelete,
+        error: errorDelete,
+        success: successDelete,
+    } = productDelete
 
     const userLogin = useSelector((state) => state.userLogin)
     const { userInfo } = userLogin
@@ -22,20 +29,24 @@ const ProductListScreen = ({ history }) => {
         } else {
             history.push('/login')
         }
-    }, [dispatch, history, userInfo])
+    }, [dispatch, history, userInfo, successDelete])
+
+    const deleteHandler = (id) => {
+        if(window.confirm('Are you sure ?')) {
+            dispatch(deleteProduct(id))
+        }
+    }
 
     const createProductHandler = () => {
 
     }
 
-    const deleteHandler = (id) => {
-        // if(window.confirm('Are you sure ?')) {
-
-        // }
-    }
+    
 
     return (
         <div className='productlist__container'>
+            {loadingDelete && <Loader />}
+            {errorDelete && <Message variant='danger'>{errorDelete}</Message>}
             {loading ? (
                 <Loader />
             ): error ? (
@@ -78,7 +89,7 @@ const ProductListScreen = ({ history }) => {
                                             </Button>
                                         </LinkContainer>
 
-                                        <Button variant='danger btn-sm' onClick={deleteHandler(product._id)}>
+                                        <Button variant='danger btn-sm' onClick={() => deleteHandler(product._id)}>
                                             Delete
                                         </Button>
                                     </td>
