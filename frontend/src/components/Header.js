@@ -1,9 +1,10 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Form, Button, NavDropdown } from 'react-bootstrap'
 import { Search, ShoppingCart } from '@material-ui/icons';
+import SearchBox from './SearchBox'
 import { logout } from '../actions/userActions'
 
 const Header = () => {
@@ -26,13 +27,15 @@ const Header = () => {
                 
                 <Navbar.Collapse id="responsive-navbar-nav">
 
-                    <Form inline>
+                    {/* <Form inline>
                         <input type='text' placeholder='Search...' className='header__search' />
                         <Button type="submit" className='btn btn-secondary'>
                             <Search style={{ color: 'black' }} />
                         </Button>
-                    </Form>
+                    </Form> */}
 
+                    <Route render={({ history }) => <SearchBox history={history} />} />
+ 
                     <Nav className="ml-auto">
                         {userInfo ? (
                             <NavDropdown title={ userInfo.name }>
