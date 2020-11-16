@@ -27,7 +27,9 @@ const App = () => {
     <Router>
       <Header />
         <main>
-          <Route path='/search/:keyword' component={HomeScreen} />
+          <Route path='/search/:keyword' component={HomeScreen} exact />
+          <Route path='/page/:pageNumber' component={HomeScreen} exact />
+          <Route path='/search/:keyword/page/:pageNumber' component={HomeScreen} exact />
           <Route path='/' component={HomeScreen} exact />
           <Container>
             <Route path='/product/:id' component={ProductScreen} />
@@ -39,7 +41,8 @@ const App = () => {
             <Route path='/order/:id' component={OrderScreen} />
             <Route path='/orders' component={MyOrderScreen} />
             <Route path='/admin/userlist' component={UserListScreen} />
-            <Route path='/admin/productlist' component={ProductListScreen} />
+            <Route path='/admin/productlist' component={ProductListScreen} exact />
+            <Route path='/admin/productlist/:pageNumber' component={ProductListScreen} exact />
             <Route path='/admin/orderlist' component={OrderListScreen} />
           </Container>
           <Route path='/login' component={LoginScreen} />
