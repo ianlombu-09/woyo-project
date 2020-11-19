@@ -20,6 +20,7 @@ import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
+import PaymentMethodScreen from './screens/PaymentMethodScreen'
 
 const App = () => {
   
@@ -48,6 +49,7 @@ const App = () => {
           <Route path='/login' component={LoginScreen} />
           <Route path='/register' component={RegisterScreen} />
           <Route path='/profile' component={ProfileScreen} />
+          <Route path='/paymentmethod' component={PaymentMethodScreen} />
           <Route path='/admin/user/:id/edit' component={UserEditScreen} />
           <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
           

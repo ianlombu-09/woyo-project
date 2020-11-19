@@ -60,6 +60,12 @@ const productSchema = mongoose.Schema(
             default: 0
         },
 
+        numReviews: {
+            type: Number,
+            required: true,
+            default: 0,
+        },
+
         price: {
             type: Number,
             require: true,

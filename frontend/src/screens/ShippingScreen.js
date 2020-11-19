@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Form, Button, Col, Row } from 'react-bootstrap'
-import { LocalShipping } from '@material-ui/icons';
+import { Form, Button, Col, Row, Image } from 'react-bootstrap'
 import { saveShippingAddress } from '../actions/cartActions'
 import CheckoutSteps  from '../components/CheckoutSteps.js'
+import ShippingImage from '../assets/images/Shipping.png'
 
 const ShippingScreen = ({ history}) => {
     const cart = useSelector((state) => state.cart)
@@ -80,14 +80,7 @@ const ShippingScreen = ({ history}) => {
                 </Col>
 
                 <Col md={6}>
-                    <LocalShipping  
-                        style={{ 
-                            fontSize: '200px',
-                            color: '#1bb9ce',
-                            marginTop: '60px',
-                            marginLeft: '50px',
-                        }}
-                    />
+                    <Image src={ShippingImage} fluid />
                 </Col>
 
             </Row>

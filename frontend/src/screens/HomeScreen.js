@@ -25,7 +25,7 @@ const HomeScreen = ({ match }) => {
 
     return (
         <>
-            {/* <Hero /> */}
+            <Hero />
             <Container>
                 {loading ? (
                     <Loader />

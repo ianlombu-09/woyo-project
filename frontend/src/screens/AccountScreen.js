@@ -33,13 +33,13 @@ const AccountScreen = () => {
                     </Link>
                 </Col>
 
-                <Col md={4} style={{ cursor: 'pointer' }} className='text-center account_items'>
-                    <Link to='/payment'>
-                        <ShoppingBasket 
+                <Col md={4} style={{ cursor: 'pointer' }} className='text-center account_items' >
+                    <Link to='/paymentmethod'>
+                        <Payment 
                             style={{ fontSize: '80px', color: ' #1bb9ce' }}
                         />
-                        <h4>Your Orders</h4>
-                        <h6 className='text-light'>Track, return, or buy things again</h6>
+                        <h4>Payment</h4>
+                        <h6 className='text-light'>Manage Payment Method</h6>
                     </Link>
                 </Col>
             </Row>

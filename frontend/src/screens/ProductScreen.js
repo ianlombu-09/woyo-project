@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector} from 'react-redux'
 import { Link } from 'react-router-dom'
-import { Row, Col, ListGroup, Image, Button, Form, ListGroupItem } from 'react-bootstrap'
+import { Row, Col, ListGroup, Image, Button, Form } from 'react-bootstrap'
 // import { Link } from 'react-router-dom'
 import Rating from '../components/Rating'
 import Loader from '../components/Loader'
@@ -153,7 +153,7 @@ const ProductScreen = ({ match, history }) => {
                             <ListGroup variant='flush'>
                                 
                                 {product.reviews.map((review) => (
-                                    <ListGroup.Item>
+                                    <ListGroup.Item key={review._id}>
                                         <strong>{review.name}</strong>
                                         <Rating value={review.rating} />
                                         <p>{review.createdAt.substring(0, 10)}</p>

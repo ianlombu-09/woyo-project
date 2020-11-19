@@ -1,12 +1,13 @@
 import React from 'react'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Image } from 'react-bootstrap'
+import LogoImage from '../assets/images/Logo.png'
 
 const Footer = () => {
     return (
         <footer>
             <Row className='text-center'>
                 <Col md={2}>
-                    <h2 style={{ fontWeight: 'bold', letterSpacing: '5px' }}>WO|<span style={{ color:'Yellow' }}>YO</span></h2>
+                    <Image src={LogoImage} style={{ width: '150px', marginTop:'20px' }} />
                 </Col>
                     
                 <Col md={3}>
