@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-import { LinkContainer } from 'react-router-bootstrap'
 import { Payment, VerifiedUser, ShoppingBasket } from '@material-ui/icons';
 
 const AccountScreen = () => {
